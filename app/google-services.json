@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "242205962753",
+    "project_id": "cariin-752e6",
+    "storage_bucket": "cariin-752e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242205962753:android:cb7e980ebca21a5ad3c600",
+        "android_client_info": {
+          "package_name": "com.example.cariin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYyjZ-rayrwfvFPUVY6HDaA4mCQlD279M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
