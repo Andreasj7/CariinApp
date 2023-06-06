@@ -8,8 +8,10 @@ import android.widget.Button
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     private lateinit var toggle : ActionBarDrawerToggle
@@ -27,8 +29,21 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
+                R.id.nav_logout -> {
+                    // Perform logout action
+                    FirebaseAuth.getInstance().signOut()
+
+                    // Redirect to login activity or any other desired action
+                    val intent = Intent(this, Login::class.java)
+                    startActivity(intent)
+
+                    // Close the drawer if needed
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                }
                 R.id.nav_home -> Toast.makeText(
                     applicationContext,
                     "Clicked Home",
@@ -53,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
 
-                R.id.nav_login -> Toast.makeText(
+                R.id.nav_logout -> Toast.makeText(
                     applicationContext,
                     "Clicked login",
                     Toast.LENGTH_SHORT
@@ -65,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
             true
         }
     }
